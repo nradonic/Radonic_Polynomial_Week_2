@@ -69,14 +69,44 @@
           <text value="Store"/>
         </properties>
       </component>
-      <component id="346f9" class="javax.swing.JTable" binding="table1" default-binding="true">
+      <scrollpane id="83ea0" binding="scroller1">
         <constraints>
-          <grid row="3" column="0" row-span="1" col-span="2" vsize-policy="6" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="false">
-            <preferred-size width="150" height="50"/>
+          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false">
+            <minimum-size width="-1" height="300"/>
+            <preferred-size width="-1" height="300"/>
           </grid>
         </constraints>
-        <properties/>
-      </component>
+        <properties>
+          <verifyInputWhenFocusTarget value="false"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <component id="6c116" class="javax.swing.JTextArea" binding="textArea1" default-binding="true">
+            <constraints/>
+            <properties/>
+          </component>
+        </children>
+      </scrollpane>
+      <scrollpane id="d575c" binding="scroller2">
+        <constraints>
+          <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false">
+            <minimum-size width="-1" height="300"/>
+            <preferred-size width="-1" height="300"/>
+          </grid>
+        </constraints>
+        <properties>
+          <doubleBuffered value="false"/>
+          <verifyInputWhenFocusTarget value="false"/>
+          <verticalScrollBarPolicy value="20"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <component id="2b9b0" class="javax.swing.JTextArea" binding="textArea2" default-binding="true">
+            <constraints/>
+            <properties/>
+          </component>
+        </children>
+      </scrollpane>
     </children>
   </grid>
 </form>
