@@ -1,14 +1,16 @@
 package ProcessPolynomials;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 /**
  * Created by NickRadonic on 1/25/15.
  */
-public class Polynomial {
+public class Polynomial{
     private String name;
 
     private ArrayList<Integer> powerAndCoeffs = new ArrayList<>();
+    int coeffsPointer;
 
     public Polynomial(String name){
         this.name = name;
@@ -18,8 +20,9 @@ public class Polynomial {
         Boolean foundPower = false;
         for (int i=0; i < powerAndCoeffs.size(); i+=2){
             if (powerAndCoeffs.get(i) == power){
-                powerAndCoeffs.set(i+1, coeff + powerAndCoeffs.get(i+1));
+                int total = coeff + powerAndCoeffs.get(i+1);
                 foundPower = true;
+                powerAndCoeffs.set(i + 1, total);
             }
         }
         if(!foundPower){
@@ -50,4 +53,19 @@ public class Polynomial {
     public String getName(){
         return name;
     }
- }
+
+    public void resetArgsPointer(){
+        coeffsPointer = 0;
+    }
+
+    public Boolean hasNext(){
+        return coeffsPointer < powerAndCoeffs.size();
+    }
+
+    public Integer getNext(){
+        Integer temp = powerAndCoeffs.get(coeffsPointer);
+        coeffsPointer++;
+        return temp;
+    }
+
+}
